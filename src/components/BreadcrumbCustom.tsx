@@ -3,7 +3,8 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const breadcrumbNameMap: Record<string, string> = {
-  "/home": "Thống kê",
+  "/report": "Thống kê",
+  "/report/sales": "Doanh số",
   "/rooms": "Phòng",
   "/users": "Người dân",
 };
@@ -24,7 +25,7 @@ export const BreadcrumbCustom = () => {
 
   const breadcrumbItems = [
     <Breadcrumb.Item key="home">
-      <Link to="/">Trang chủ</Link>
+      <Link to="/"></Link>
     </Breadcrumb.Item>,
   ].concat(extraBreadcrumbItems);
 
