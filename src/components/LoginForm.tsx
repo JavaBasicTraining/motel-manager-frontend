@@ -1,5 +1,4 @@
 import { Button, Checkbox, Form, Input, Modal } from "antd";
-import React from "react";
 
 export const LoginForm = ({
   isLoginFormModalVisible,
@@ -9,9 +8,8 @@ export const LoginForm = ({
   const [form] = Form.useForm();
 
   const onFinish = (values: any) => {
-    console.log("Success:", values);
+    handleOk(values);
     clearForm();
-    handleOk();
   };
 
   const onFinishFailed = (errorInfo: any) => {
