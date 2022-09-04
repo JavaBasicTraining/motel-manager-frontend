@@ -8,10 +8,15 @@ const { Sider } = Layout;
 type MenuItem = Required<MenuProps>["items"][number];
 
 const items: MenuItem[] = [
-  getItem(<Link to={"/home"}>Thống kê</Link>, "1", <PieChartOutlined />),
+  getItem(<Link to={"/report"}>Thống kê</Link>, "1", <PieChartOutlined />, [
+    getItem(
+      <Link to={"/report/sales"}>Doanh số</Link>,
+      "1.1",
+      <PieChartOutlined />
+    ),
+  ]),
   getItem(<Link to={"/rooms"}>Phòng</Link>, "2", <PieChartOutlined />),
   getItem(<Link to={"/users"}>Người dân</Link>, "3", <UserOutlined />),
-  getItem(<Link to={"/users/1"}>Người dân 1</Link>, "4", <UserOutlined />),
 ];
 
 function getItem(
