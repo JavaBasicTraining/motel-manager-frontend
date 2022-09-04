@@ -35,11 +35,13 @@ class AuthService {
 
   getUserInfo() {
     var auth = this.getCurrentAuth();
+    console.log(auth?.data?.user_info.avatarUrl)
     return auth?.data?.user_info;
   }
 
   getToken() {
     var user = this.getCurrentAuth();
+    
     return user.data.access_token;
   }
 }

@@ -10,6 +10,8 @@ import { UserInfo } from "../components/UserInfo";
 import User from "../interfaces/User";
 import confirm from "antd/lib/modal/confirm";
 import { ExclamationCircleOutlined } from "@ant-design/icons";
+import { Users } from "./Users";
+import { Rooms } from "./Rooms";
 
 const { Header, Content, Footer } = Layout;
 
@@ -108,6 +110,7 @@ const App = () => {
                     email={user?.email}
                     firstName={user?.firstName}
                     lastName={user?.lastName}
+                    avatarUrl={user?.avatarUrl}
                   />
                   <Button onClick={showDeleteConfirm}>Đăng xuất</Button>
                 </div>
@@ -135,9 +138,15 @@ const App = () => {
                 height: "100%",
               }}
             >
-              <Routes>
-                <Route path="/home" element={<Report />} />
-              </Routes>
+              {!isLogin ? (
+                <></>
+              ) : (
+                <Routes>
+                  <Route path="/report/sales" element={<Report />} />
+                  <Route path="/users" element={<Users />} />
+                  <Route path="/rooms" element={<Rooms />} />
+                </Routes>
+              )}
             </div>
           </Content>
           <Footer
